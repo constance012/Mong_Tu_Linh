@@ -50,6 +50,12 @@ public static class UserSettings
 		get { return PlayerPrefs.GetInt("DialogueSpeed", 50); }
 		set { PlayerPrefs.SetInt("DialogueSpeed", value); }
 	}
+	
+	public static int LocaleIndex
+	{
+		get { return PlayerPrefs.GetInt("LocaleIndex", 0); }
+		set { PlayerPrefs.SetInt("LocaleIndex", value); }
+	}
 	#endregion
 
 	/// <summary>
@@ -83,6 +89,7 @@ public static class UserSettings
 
 				QualityLevel = 2;
 				DialogueSpeed = 50;
+				LocaleIndex = 0;
 				break;
 		}
 	}

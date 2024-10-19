@@ -14,7 +14,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: String Table
   m_TableCollectionNameGuidString: ea3047893d4d31d41a3ed9481a646877
-  m_Entries: []
+  m_Entries:
+  - m_Id: 28733552324608
+    m_Key: menu-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33001235673088
+    m_Key: start-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33081686618112
+    m_Key: settings-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33163702038528
+    m_Key: quit-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77633617260544
+    m_Key: settings-title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77816388251648
+    m_Key: audio-tab-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77964375879680
+    m_Key: gameplay-tab-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78041467187200
+    m_Key: master-slider-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78361253507072
+    m_Key: music-slider-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78610739097600
+    m_Key: sound-slider-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78682423947264
+    m_Key: dialogue-speed-slider-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78871066963968
+    m_Key: language-selector-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81938399227904
+    m_Key: reset-button-label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81992166010880
+    m_Key: done-button-label
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

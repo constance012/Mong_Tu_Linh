@@ -15,13 +15,10 @@ public sealed class SettingsMenu : MonoBehaviour
 	[SerializeField] private SliderGroup musicSlider;
 	[SerializeField] private SliderGroup soundSlider;
 	[SerializeField] private SliderGroup ambienceSlider;
-	[SerializeField] private SliderGroup aimSpeedSlider;
 	[SerializeField] private SliderGroup dialogueSpeedSlider;
 
 	[Header("Directional Selectors"), Space]
-	[SerializeField] private DirectionalSelector qualitySelector;
-	[SerializeField] private DirectionalSelector framerateSelector;
-	[SerializeField] private DirectionalSelector vsyncSelector;
+	[SerializeField] private LanguageSelector languageSelector;
 
 	private void OnEnable()
 	{
@@ -104,15 +101,15 @@ public sealed class SettingsMenu : MonoBehaviour
 		masterSlider.Value = masterVol;
 		musicSlider.Value = musicVol;
 		soundSlider.Value = soundVol;
-		ambienceSlider.Value = ambienceVol;
+		//ambienceSlider.Value = ambienceVol;
 		dialogueSpeedSlider.Value = dialogueSpeed;
 
 		masterSlider.DisplayText = ConvertDecibelToText(masterVol);
 		musicSlider.DisplayText = ConvertDecibelToText(musicVol);
 		soundSlider.DisplayText = ConvertDecibelToText(soundVol);
-		ambienceSlider.DisplayText = ConvertDecibelToText(ambienceVol);
+		//ambienceSlider.DisplayText = ConvertDecibelToText(ambienceVol);
 		dialogueSpeedSlider.DisplayText = dialogueSpeed.ToString();
 
-		qualitySelector.Index = UserSettings.QualityLevel;
+		languageSelector.Index = UserSettings.LocaleIndex;
 	}
 }

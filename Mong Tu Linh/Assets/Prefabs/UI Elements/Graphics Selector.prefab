@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 15
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "trung b\xECnh"
+  m_text: Vietnamese
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5125cbad4d8eb9e47bc084a94ee637d2, type: 2}
   m_sharedMaterial: {fileID: 6302691170331942633, guid: 5125cbad4d8eb9e47bc084a94ee637d2, type: 2}
@@ -219,8 +219,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279056968
-  m_fontColor: {r: 0.2830189, g: 0.22910565, b: 0.049394805, a: 1}
+    rgba: 4280618836
+  m_fontColor: {r: 0.3301887, g: 0.060742266, b: 0.14389868, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -364,7 +364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0110\u1ED2 H\u1ECCA:"
+  m_text: "Ng\xF4n Ng\u1EEF:"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5125cbad4d8eb9e47bc084a94ee637d2, type: 2}
   m_sharedMaterial: {fileID: 6302691170331942633, guid: 5125cbad4d8eb9e47bc084a94ee637d2, type: 2}
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

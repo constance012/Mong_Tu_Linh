@@ -17,7 +17,63 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ea3047893d4d31d41a3ed9481a646877, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 28733552324608
+    m_Localized: DREAM OF THE DEAD SOULS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33163702038528
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33081686618112
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33001235673088
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77633617260544
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77816388251648
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 77964375879680
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78041467187200
+    m_Localized: 'Master:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78361253507072
+    m_Localized: 'Music:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78610739097600
+    m_Localized: 'Sound:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78682423947264
+    m_Localized: 'Dialogue Speed:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 78871066963968
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81938399227904
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 81992166010880
+    m_Localized: Done
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

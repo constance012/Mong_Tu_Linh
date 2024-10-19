@@ -18,13 +18,13 @@ MonoBehaviour:
   m_GUID: 465f5da27e3e0594ba651ca80a54bde9
   m_SerializeEntries:
   - m_GUID: 34628229afae8e64ab1bc8dc780fd642
-    m_Address: English (en)
+    m_Address: English
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5f303c12cdde9ec45a7ddd4252a44ba3
-    m_Address: Vietnamese (vi)
+    m_Address: Vietnamese
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale

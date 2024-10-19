@@ -5,36 +5,38 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
-public sealed class DirectionalSelector : MonoBehaviour
+public abstract class DirectionalSelector<TObject> : MonoBehaviour
 {
 	[Header("References"), Space]
-	[SerializeField] private Button previousButton;
-	[SerializeField] private Button nextButton;
-	[SerializeField] private TextMeshProUGUI selectedText;
+	[SerializeField] protected Button previousButton;
+	[SerializeField] protected Button nextButton;
+	[SerializeField] protected TextMeshProUGUI selectedText;
 
 	[Header("Options"), Space]
-	[SerializeField] private string[] options;
-	[SerializeField] private int defaultOptionIndex;
+	[SerializeField] protected TObject[] options;
+	[SerializeField] protected int defaultOptionIndex;
 	
 	[Header("On Value Changed Event"), Space]
 	public UnityEvent<int> onIndexChanged;
-	public UnityEvent<string> onValueChanged;
+	public UnityEvent<TObject> onValueChanged;
 
 	public int Index
 	{
 		get { return _currentIndex; }
-		set { SetIndex(value); }
+		set { SetIndex(value, notify: true); }
 	}
 
-	public string Value
+	public TObject Value
 	{
 		get { return _selected; }
-		set { SetValue(value); }
+		set { SetValue(value, notify: true); }
 	}
 
+	// Protected fields.
+	protected TObject _selected;
+	protected int _currentIndex;
+
 	// Private fields.
-	private string _selected;
-	private int _currentIndex;
 	private TweenPool _tweenPool = new TweenPool();
 
 	private void Start()
@@ -43,61 +45,76 @@ public sealed class DirectionalSelector : MonoBehaviour
 		nextButton.onClick.AddListener(NextOption);
 	}
 
-	public void PreviousOption()
+	public void SetIndexWithoutNotify(int index)
+	{
+		SetIndex(index, false);
+	}
+	
+	public void SetValueWithoutNotify(TObject value)
+	{
+		SetValue(value, false);
+	}
+
+	private void PreviousOption()
 	{
 		int len = options.Length;
 		_currentIndex = (--_currentIndex % len + len) % len;
 		ReloadUI();	
 	}
 
-	public void NextOption()
+	private void NextOption()
 	{
 		_currentIndex = ++_currentIndex % options.Length;
 		ReloadUI();
 	}
 
-	private void ReloadUI()
+	private void ReloadUI(bool notify = true)
 	{
 		_tweenPool.KillActiveTweens(false);
 
 		_selected = options[_currentIndex];
-		selectedText.text = _selected;
+		SetDisplayText();
 
 		_tweenPool.Add(selectedText.transform.DOScale(1f, .2f)
 							  				 .From(1.2f)
 							  				 .SetEase(Ease.OutCubic));
 
-		onIndexChanged?.Invoke(_currentIndex);
-		onValueChanged?.Invoke(_selected);
+		if (notify)
+		{
+			onIndexChanged?.Invoke(_currentIndex);
+			onValueChanged?.Invoke(_selected);
+		}
 	}
 
-	private void SetIndex(int index)
+	protected abstract void SetDisplayText();
+
+	private void SetIndex(int index, bool notify)
 	{
 		try
 		{
 			_currentIndex = index;
-			ReloadUI();
+			ReloadUI(notify);
 		}
 		catch (IndexOutOfRangeException)
 		{
 			_currentIndex = defaultOptionIndex;
-			ReloadUI();
+			ReloadUI(notify);
 		}
 	}
 
-	private void SetValue(string value)
+	private void SetValue(TObject value, bool notify)
 	{
 		int index = Array.IndexOf(options, value);
 		
 		if (index != -1)
 		{
 			_currentIndex = index;
-			ReloadUI();
+			ReloadUI(notify);
 		}
 		else
 		{
 			_currentIndex = defaultOptionIndex;
-			ReloadUI();
+			ReloadUI(notify);
 		}
 	}
 }

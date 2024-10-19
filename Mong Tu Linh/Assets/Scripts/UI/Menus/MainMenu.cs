@@ -1,8 +1,7 @@
-using System;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;
+using DG.Tweening;
 
 public sealed class MainMenu : MonoBehaviour
 {
@@ -35,7 +34,13 @@ public sealed class MainMenu : MonoBehaviour
 	public void StartGame()
 	{
 		DOTween.Clear();
-		SceneLoader.Instance.LoadSceneAsync("Scenes/Prologue");
+		SceneLoader.Instance.LoadSceneAsync("Scenes/Game");
+	}
+
+	public void QuitGame()
+	{
+		Debug.Log("Quiting player...");
+		Application.Quit();
 	}
 	#endregion
 
@@ -51,6 +56,9 @@ public sealed class MainMenu : MonoBehaviour
 			mixer.SetFloat("ambienceVol", UserSettings.ToMixerDecibel(UserSettings.AmbienceVolume));
 
 			QualitySettings.SetQualityLevel(UserSettings.QualityLevel);
+			
+			LocalizationSettings.InitializationOperation.WaitForCompletion();
+			LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[UserSettings.LocaleIndex];
 
 			_userSettingsLoaded = true;
 		}
